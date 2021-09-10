@@ -1,0 +1,23 @@
+<html>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+             <%= render 'users/info', users: @users %>
+          </div>
+          <div class="col-md-4">
+          <% @books.each do |book| %>
+          <p>ユーザーネーム：<%= book.user.name %></p>
+          <p>title：<%= book.title %></p>
+          <p>body：<%= book.body %></p>
+          <%= attachment_image_tag book.user, :profile_image, fallback: "no_image.jpg", size: "40x40" %>
+          <% end %>
+          <h2>Books</h2>
+          </div>
+        </div>
+      </div>
+
+ <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+</html>

@@ -1,0 +1,38 @@
+
+ <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+
+
+
+
+　　<div class="container">
+
+     <div class="row">
+
+           <%= render 'users/info', users: @users %>
+
+          <div class="col-lg-8">
+
+ 		    <h2>Book detail</h2>
+
+          <% @books.each do |book| %>
+          <%= link_to book_path(book.id) do %>
+          <% end %>
+          <p>ショップ名：<%= book.title %></p>
+          <p>説明：<%= book.body %></p>
+          <p>ユーザーネーム：<%= book.user.name %></p>
+          <p>投稿ユーザー画像：<%= attachment_image_tag book.user, :profile_image, fallback: "no_image.jpg", size: "40x40" %></p>
+          <% end %>
+
+          </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+

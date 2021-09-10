@@ -1,0 +1,23 @@
+
+
+   <div class="container">
+      <div class="row">
+          <div class="col-md-8">
+            <%= render 'users/info', users: @users %>
+          </div>
+          <div class="col-md-4">
+              <h1>ユーザー一覧</h1>
+          <% @users.each do |user| %>
+          <p>image</p>
+          <%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg", size: "40x40" %>
+          <p>name</p>
+          <%= user.name %>
+          <p>詳細画面へ</p>
+          <%= link_to "show", user_path(user) %>
+          <% end %>
+          </div>
+      </div>
+    </div>
+  
+   
+   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
